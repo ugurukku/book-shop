@@ -1,0 +1,1 @@
+All model should have service, mapper, controller logics
