@@ -1,11 +1,8 @@
 package com.ugurukku.kitabal.controllers;
 
 import com.ugurukku.kitabal.dto.AuthorRequest;
-import com.ugurukku.kitabal.dto.CategoryRequest;
 import com.ugurukku.kitabal.entities.Author;
-import com.ugurukku.kitabal.entities.Category;
 import com.ugurukku.kitabal.services.AuthorService;
-import com.ugurukku.kitabal.services.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

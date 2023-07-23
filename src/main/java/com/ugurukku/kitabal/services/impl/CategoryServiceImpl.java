@@ -32,4 +32,5 @@ public class CategoryServiceImpl implements CategoryService {
         category.setId(sequenceGenerator.generateSequence(Category.SEQUENCE_NAME));
         repository.save(category);
     }
+
 }

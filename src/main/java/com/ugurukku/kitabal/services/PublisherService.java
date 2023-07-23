@@ -5,7 +5,7 @@ import com.ugurukku.kitabal.entities.Publisher;
 
 import java.util.List;
 
-public interface PublisherService {
+public interface PublisherService  {
 
     List<Publisher> getAll();
 

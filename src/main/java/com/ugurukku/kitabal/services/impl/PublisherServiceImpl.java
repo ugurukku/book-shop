@@ -32,4 +32,5 @@ public class PublisherServiceImpl implements PublisherService {
         publisher.setId(sequenceGenerator.generateSequence(Publisher.SEQUENCE_NAME));
         repository.save(publisher);
     }
+
 }

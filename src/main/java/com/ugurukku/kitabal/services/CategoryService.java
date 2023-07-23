@@ -5,7 +5,7 @@ import com.ugurukku.kitabal.entities.Category;
 
 import java.util.List;
 
-public interface CategoryService{
+public interface CategoryService {
 
     List<Category> getAll();
 
