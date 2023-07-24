@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -36,10 +37,10 @@ public class Book {
     Double price;
 
     @DocumentReference
-    Author author;
+    Set<Author> author;
 
     @DocumentReference
-    Category category;
+    Set<Category> category;
 
     @DocumentReference
     Publisher publisher;
