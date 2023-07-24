@@ -37,10 +37,10 @@ public class Book {
     Double price;
 
     @DocumentReference
-    Set<Author> author;
+    Set<Author> authors;
 
     @DocumentReference
-    Set<Category> category;
+    Set<Category> categories;
 
     @DocumentReference
     Publisher publisher;
@@ -50,10 +50,5 @@ public class Book {
 
     @DocumentReference
     List<Comment> comments;
-
-
-
-
-
 
 }
