@@ -1,6 +1,7 @@
 package com.ugurukku.kitabal.services.impl;
 
 import com.ugurukku.kitabal.dto.AuthorRequest;
+import com.ugurukku.kitabal.dto.book.AuthorResponse;
 import com.ugurukku.kitabal.dto.mapper.AuthorMapper;
 import com.ugurukku.kitabal.entities.Author;
 import com.ugurukku.kitabal.entities.SequenceGeneratorService;
@@ -22,8 +23,8 @@ public class AuthorServiceImpl implements AuthorService {
     private final AuthorMapper mapper;
 
     @Override
-    public List<Author> getAll() {
-        return repository.findAll();
+    public List<AuthorResponse> getAll() {
+        return mapper.toAuthorResponse(repository.findAll());
     }
 
     @Override

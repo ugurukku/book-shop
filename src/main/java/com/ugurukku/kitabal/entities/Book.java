@@ -30,7 +30,7 @@ public class Book {
 
     Integer page;
 
-    Integer rate;
+    Double rate;
 
     Integer stock;
 

@@ -25,8 +25,7 @@ public class Cart {
     @Id
     Long id;
 
-    @DocumentReference
-    Set<Order> order;
+    Set<Order> orders;
 
     @DocumentReference
     @Indexed(unique = true)

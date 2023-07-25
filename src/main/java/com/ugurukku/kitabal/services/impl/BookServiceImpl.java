@@ -34,6 +34,7 @@ public class BookServiceImpl implements BookService {
     public void add(BookRequest bookRequest) {
         Book book = mapper.toEntity(bookRequest);
         book.setId(sequenceGenerator.generateSequence(Book.SEQUENCE_NAME));
+        book.setRate(0.0);
         repository.save(book);
     }
 
