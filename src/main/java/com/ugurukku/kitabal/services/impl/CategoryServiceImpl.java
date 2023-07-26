@@ -3,7 +3,6 @@ package com.ugurukku.kitabal.services.impl;
 import com.ugurukku.kitabal.dto.CategoryRequest;
 import com.ugurukku.kitabal.dto.mapper.CategoryMapper;
 import com.ugurukku.kitabal.entities.Category;
-import com.ugurukku.kitabal.entities.SequenceGeneratorService;
 import com.ugurukku.kitabal.repositories.CategoryRepository;
 import com.ugurukku.kitabal.services.CategoryService;
 import lombok.RequiredArgsConstructor;

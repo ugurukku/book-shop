@@ -3,7 +3,6 @@ package com.ugurukku.kitabal.services.impl;
 import com.ugurukku.kitabal.dto.LanguageRequest;
 import com.ugurukku.kitabal.dto.mapper.LanguageMapper;
 import com.ugurukku.kitabal.entities.Language;
-import com.ugurukku.kitabal.entities.SequenceGeneratorService;
 import com.ugurukku.kitabal.repositories.LanguageRepository;
 import com.ugurukku.kitabal.services.LanguageService;
 import lombok.RequiredArgsConstructor;

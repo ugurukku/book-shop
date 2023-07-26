@@ -1,16 +1,16 @@
 package com.ugurukku.kitabal.services.impl;
 
+import com.ugurukku.kitabal.dto.SearchRequest;
 import com.ugurukku.kitabal.dto.book.AllBookResponse;
 import com.ugurukku.kitabal.dto.book.BookRequest;
 import com.ugurukku.kitabal.dto.book.DetailedBookResponse;
 import com.ugurukku.kitabal.dto.mapper.BookMapper;
 import com.ugurukku.kitabal.entities.Book;
-import com.ugurukku.kitabal.entities.SequenceGeneratorService;
 import com.ugurukku.kitabal.exceptions.BookNotFoundException;
 import com.ugurukku.kitabal.repositories.BookRepository;
 import com.ugurukku.kitabal.services.BookService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,8 +26,11 @@ public class BookServiceImpl implements BookService {
     private final BookMapper mapper;
 
     @Override
-    public List<AllBookResponse> getAll(Pageable pageable) {
-        return mapper.toAllBookResponse(repository.findAll(pageable).getContent());
+    public List<AllBookResponse> getAll(SearchRequest searchRequest) {
+
+        List<Book> books = repository.findBySearchRequest(searchRequest);
+
+        return mapper.toAllBookResponse(books);
     }
 
     @Override

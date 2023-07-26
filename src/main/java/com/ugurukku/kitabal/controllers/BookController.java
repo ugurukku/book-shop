@@ -1,5 +1,6 @@
 package com.ugurukku.kitabal.controllers;
 
+import com.ugurukku.kitabal.dto.SearchRequest;
 import com.ugurukku.kitabal.dto.book.AllBookResponse;
 import com.ugurukku.kitabal.dto.book.BookRequest;
 import com.ugurukku.kitabal.dto.book.DetailedBookResponse;
@@ -19,10 +20,10 @@ public class BookController {
 
     private final BookService service;
 
-    @GetMapping
-    public ResponseEntity<List<AllBookResponse>> getAll(@RequestParam("page") int page,
-                                                        @RequestParam("count")int count) {
-        return ResponseEntity.ok(service.getAll(PageRequest.of(page,count)));
+    @PostMapping("/all")
+    public ResponseEntity<List<AllBookResponse>> getAll(@RequestBody SearchRequest searchRequest) {
+
+        return ResponseEntity.ok(service.getAll(searchRequest));
     }
 
     @PostMapping

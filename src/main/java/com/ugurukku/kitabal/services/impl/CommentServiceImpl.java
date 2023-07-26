@@ -4,7 +4,6 @@ import com.ugurukku.kitabal.dto.CommentRequest;
 import com.ugurukku.kitabal.dto.book.CommentResponse;
 import com.ugurukku.kitabal.dto.mapper.CommentMapper;
 import com.ugurukku.kitabal.entities.Comment;
-import com.ugurukku.kitabal.entities.SequenceGeneratorService;
 import com.ugurukku.kitabal.repositories.CommentRepository;
 import com.ugurukku.kitabal.services.CommentService;
 import lombok.RequiredArgsConstructor;

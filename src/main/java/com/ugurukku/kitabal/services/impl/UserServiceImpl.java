@@ -2,7 +2,6 @@ package com.ugurukku.kitabal.services.impl;
 
 import com.ugurukku.kitabal.dto.mapper.UserMapper;
 import com.ugurukku.kitabal.dto.UserRequest;
-import com.ugurukku.kitabal.entities.SequenceGeneratorService;
 import com.ugurukku.kitabal.entities.User;
 import com.ugurukku.kitabal.repositories.UserRepository;
 import com.ugurukku.kitabal.services.UserService;

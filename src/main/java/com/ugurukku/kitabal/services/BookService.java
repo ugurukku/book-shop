@@ -1,5 +1,6 @@
 package com.ugurukku.kitabal.services;
 
+import com.ugurukku.kitabal.dto.SearchRequest;
 import com.ugurukku.kitabal.dto.book.AllBookResponse;
 import com.ugurukku.kitabal.dto.book.BookRequest;
 import com.ugurukku.kitabal.dto.book.DetailedBookResponse;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public interface BookService {
 
-    List<AllBookResponse> getAll(Pageable pageable);
+    List<AllBookResponse> getAll(SearchRequest searchRequest);
 
     void add(BookRequest bookRequest);
 

@@ -4,7 +4,6 @@ import com.ugurukku.kitabal.dto.book.CartRequest;
 import com.ugurukku.kitabal.dto.book.CartResponse;
 import com.ugurukku.kitabal.dto.mapper.CartMapper;
 import com.ugurukku.kitabal.entities.Cart;
-import com.ugurukku.kitabal.entities.SequenceGeneratorService;
 import com.ugurukku.kitabal.exceptions.CartNotFoundException;
 import com.ugurukku.kitabal.repositories.CartRepository;
 import com.ugurukku.kitabal.services.CartService;

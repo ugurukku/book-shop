@@ -4,7 +4,6 @@ import com.ugurukku.kitabal.dto.AuthorRequest;
 import com.ugurukku.kitabal.dto.book.AuthorResponse;
 import com.ugurukku.kitabal.dto.mapper.AuthorMapper;
 import com.ugurukku.kitabal.entities.Author;
-import com.ugurukku.kitabal.entities.SequenceGeneratorService;
 import com.ugurukku.kitabal.repositories.AuthorRepository;
 import com.ugurukku.kitabal.services.AuthorService;
 import lombok.RequiredArgsConstructor;
