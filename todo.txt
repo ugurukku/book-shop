@@ -1,8 +1,3 @@
-ADD CRITERIA API FOR BOOK SEARCHING!
-
-
-
-
 Main goals:
 - using rabbitmq for mail sender
 - fetching images from Amazon S3
