@@ -10,7 +10,6 @@ import com.ugurukku.kitabal.exceptions.BookNotFoundException;
 import com.ugurukku.kitabal.repositories.BookRepository;
 import com.ugurukku.kitabal.services.BookService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

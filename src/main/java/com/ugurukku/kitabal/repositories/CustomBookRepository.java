@@ -5,7 +5,7 @@ import com.ugurukku.kitabal.entities.Book;
 
 import java.util.List;
 
-public interface BookMongoOperations {
+public interface CustomBookRepository {
 
     List<Book> findBySearchRequest(SearchRequest searchRequest);
 

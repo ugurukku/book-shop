@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 
-public interface BookRepository extends MongoRepository<Book,Long>,BookMongoOperations {
+public interface BookRepository extends MongoRepository<Book,Long>, CustomBookRepository {
 
 
     @Query("{'authors' : :#{#authorId}}")

@@ -13,7 +13,7 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class BookMongoOperationsImpl implements BookMongoOperations {
+public class CustomBookRepositoryImpl implements CustomBookRepository {
 
     private final MongoOperations mongoOperations;
 
