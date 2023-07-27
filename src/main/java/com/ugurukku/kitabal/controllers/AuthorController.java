@@ -1,6 +1,7 @@
 package com.ugurukku.kitabal.controllers;
 
 import com.ugurukku.kitabal.dto.AuthorRequest;
+import com.ugurukku.kitabal.dto.book.AuthorResponse;
 import com.ugurukku.kitabal.entities.Author;
 import com.ugurukku.kitabal.services.AuthorService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class AuthorController {
     private final AuthorService service;
 
     @GetMapping
-    public ResponseEntity<List<Author>> getAll() {
+    public ResponseEntity<List<AuthorResponse>> getAll() {
         return ResponseEntity.ok(service.getAll());
     }
 

@@ -3,7 +3,6 @@ package com.ugurukku.kitabal.services.impl;
 import com.ugurukku.kitabal.dto.PublisherRequest;
 import com.ugurukku.kitabal.dto.mapper.PublisherMapper;
 import com.ugurukku.kitabal.entities.Publisher;
-import com.ugurukku.kitabal.entities.SequenceGeneratorService;
 import com.ugurukku.kitabal.repositories.PublisherRepository;
 import com.ugurukku.kitabal.services.PublisherService;
 import lombok.RequiredArgsConstructor;

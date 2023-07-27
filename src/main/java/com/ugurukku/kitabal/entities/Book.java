@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -29,17 +30,17 @@ public class Book {
 
     Integer page;
 
-    Integer rate;
+    Double rate;
 
     Integer stock;
 
     Double price;
 
     @DocumentReference
-    Author author;
+    Set<Author> authors;
 
     @DocumentReference
-    Category category;
+    Set<Category> categories;
 
     @DocumentReference
     Publisher publisher;
@@ -49,10 +50,5 @@ public class Book {
 
     @DocumentReference
     List<Comment> comments;
-
-
-
-
-
 
 }
