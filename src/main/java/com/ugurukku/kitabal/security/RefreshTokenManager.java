@@ -1,6 +1,6 @@
 package com.ugurukku.kitabal.security;
 
-import com.ugurukku.kitabal.dto.RefreshTokenDto;
+import com.ugurukku.kitabal.dto.auth.RefreshTokenDto;
 import com.ugurukku.kitabal.entities.User;
 import com.ugurukku.kitabal.utils.PublicPrivateKeyUtils;
 import io.jsonwebtoken.Claims;
