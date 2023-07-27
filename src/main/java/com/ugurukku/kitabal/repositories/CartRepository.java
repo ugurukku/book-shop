@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface CartRepository extends MongoRepository<Cart,Long> {
 
     Optional<Cart> findCartByUserId(Long userId);
-
+    
 }

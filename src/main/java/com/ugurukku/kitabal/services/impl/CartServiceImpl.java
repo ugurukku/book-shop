@@ -34,15 +34,15 @@ public class CartServiceImpl implements CartService {
     public void addOrderToCart(CartRequest request) {
         Optional<Cart> optionalCart = repository.findCartByUserId(request.user().id());
 
+        Cart cart;
         if (optionalCart.isPresent()){
-            Cart cart = optionalCart.get();
+            cart = optionalCart.get();
             cart.getOrders().addAll(mapper.toOrderEntity(request.orders()));
-            repository.save(cart);
         }else {
-            Cart cart = mapper.toEntity(request);
+            cart = mapper.toEntity(request);
             cart.setId(sequenceGenerator.generateSequence(Cart.SEQUENCE_NAME));
-            repository.save(cart);
         }
+        repository.save(cart);
 
 
     }
