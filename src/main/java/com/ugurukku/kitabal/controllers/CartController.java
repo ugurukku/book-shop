@@ -1,7 +1,7 @@
 package com.ugurukku.kitabal.controllers;
 
-import com.ugurukku.kitabal.dto.book.CartRequest;
-import com.ugurukku.kitabal.dto.book.CartResponse;
+import com.ugurukku.kitabal.dto.cart.CartRequest;
+import com.ugurukku.kitabal.dto.cart.CartResponse;
 import com.ugurukku.kitabal.services.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
 package com.ugurukku.kitabal.services.impl;
 
-import com.ugurukku.kitabal.dto.book.CartRequest;
-import com.ugurukku.kitabal.dto.book.CartResponse;
+import com.ugurukku.kitabal.dto.cart.CartRequest;
+import com.ugurukku.kitabal.dto.cart.CartResponse;
 import com.ugurukku.kitabal.dto.mapper.CartMapper;
 import com.ugurukku.kitabal.entities.Cart;
 import com.ugurukku.kitabal.exceptions.CartNotFoundException;

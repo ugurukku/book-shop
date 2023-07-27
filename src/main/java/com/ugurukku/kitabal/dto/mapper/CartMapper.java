@@ -1,8 +1,8 @@
 package com.ugurukku.kitabal.dto.mapper;
 
-import com.ugurukku.kitabal.dto.book.CartOrderRequest;
-import com.ugurukku.kitabal.dto.book.CartRequest;
-import com.ugurukku.kitabal.dto.book.CartResponse;
+import com.ugurukku.kitabal.dto.cart.CartOrderRequest;
+import com.ugurukku.kitabal.dto.cart.CartRequest;
+import com.ugurukku.kitabal.dto.cart.CartResponse;
 import com.ugurukku.kitabal.entities.Cart;
 import com.ugurukku.kitabal.entities.Order;
 import org.mapstruct.Mapper;
