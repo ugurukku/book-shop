@@ -1,7 +1,7 @@
 package com.ugurukku.kitabal.services;
 
-import com.ugurukku.kitabal.dto.CommentRequest;
-import com.ugurukku.kitabal.dto.book.CommentResponse;
+import com.ugurukku.kitabal.dto.comment.CommentRequest;
+import com.ugurukku.kitabal.dto.comment.CommentResponse;
 
 import java.util.List;
 

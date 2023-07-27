@@ -1,4 +1,4 @@
-package com.ugurukku.kitabal.dto.book;
+package com.ugurukku.kitabal.dto.comment;
 
 public record CommentResponse(
         String content,
