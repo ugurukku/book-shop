@@ -1,6 +1,7 @@
 package com.ugurukku.kitabal.dto.book;
 
 import com.ugurukku.kitabal.dto.IdNameResponse;
+import com.ugurukku.kitabal.dto.comment.BookCommentResponse;
 import com.ugurukku.kitabal.entities.*;
 
 import java.util.List;
