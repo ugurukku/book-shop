@@ -8,9 +8,11 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.function.Function;
 
 @Component
 @Slf4j
@@ -44,5 +46,21 @@ private final SecurityProperties securityProperties;
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
+    }
+
+
+    public String extractUsername(String token) {
+        return (read(token).get("email",String.class));
+    }
+
+    public boolean isTokenExpired(String token){
+        return read(token).getExpiration().before(new Date());
+    }
+
+
+
+    public boolean isTokenValid(String jwt, UserDetails user) {
+        final String email = extractUsername(jwt);
+        return (email.equals(user.getUsername())) && !isTokenExpired(jwt);
     }
 }
