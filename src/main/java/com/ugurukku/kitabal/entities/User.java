@@ -35,6 +35,8 @@ public class User {
 
     String password;
 
+    Boolean isActive;
+
     Role role;
 
 }

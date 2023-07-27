@@ -1,4 +1,4 @@
-package com.ugurukku.kitabal.dto;
+package com.ugurukku.kitabal.dto.auth;
 
 
 import lombok.AllArgsConstructor;
