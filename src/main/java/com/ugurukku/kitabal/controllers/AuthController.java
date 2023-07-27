@@ -5,6 +5,7 @@ import com.ugurukku.kitabal.dto.auth.LoginRequest;
 import com.ugurukku.kitabal.dto.auth.RegisterRequest;
 import com.ugurukku.kitabal.services.impl.AuthServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +26,8 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody RegisterRequest registerRequest){
-        return null;
+        service.register(registerRequest);
+        return new ResponseEntity<>("Doğrulama kodu email ünvanınıza göndərildi", HttpStatus.CREATED);
     }
 
 

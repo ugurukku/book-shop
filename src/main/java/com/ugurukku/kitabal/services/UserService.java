@@ -7,4 +7,6 @@ public interface UserService {
     void add(UserRequest userRequest);
 
     User getByEmail(String email);
+
+    boolean existsByEmail(String email);
 }

@@ -35,8 +35,8 @@ public class User {
 
     String password;
 
-    Boolean isActive;
+    Boolean isActive = false;
 
-    Role role;
+    Role role = Role.USER;
 
 }
