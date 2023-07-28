@@ -2,6 +2,11 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost/kitabal
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   jpa:
     show-sql: true
 
@@ -20,3 +25,8 @@ logging:
           mongodb:
             core:
               MongoTemplate: DEBUG
+
+rabbitmq:
+  queue: ugurukku.queue
+  exchange: ugurukku.exchange
+  routingkey: ugurukku.routingkey
