@@ -38,4 +38,9 @@ public class UserServiceImpl implements UserService {
     public User getByEmail(String email) {
         return repository.findUserByEmail(email).orElseThrow(() -> new UsernameNotFoundException("Istifadəçi adı və yta şifrə yanlışdır"));
     }
+
+    @Override
+    public boolean existsByEmail(String email) {
+        return repository.existsByEmail(email);
+    }
 }

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: kitabal:rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    container_name: rabbitmq
+
+  app:
+    image: kitabal:mail-sender
+    ports:
+      - "8081:8081"
+    container_name: mail-sender
+
+  db:
+    image: kitabal:mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - "my_mongo_data:/data/db"
+    container_name: mongodb
+
+volumes:
+  my_mongo_data:
+    external:
+      name: aa109597e56e9e30c833bbfb680e3894f5975c3534ed9e4e8e5f610c73f86428

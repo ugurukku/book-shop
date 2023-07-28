@@ -1,5 +1,6 @@
-package com.ugurukku.kitabal.security;
+package com.ugurukku.kitabal.configs;
 
+import com.ugurukku.kitabal.security.AuthorizationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -66,11 +67,8 @@ public class SecurityConfiguration {
                         "/auth/**",
                         "/swagger-ui/**",
                         "/v3/api-docs/**",
-                        "/brands/**",
-                        "/models/**")
+                        "/api/auth/verify")
                 .permitAll()
-                .requestMatchers(HttpMethod.GET,"/admin/**")
-                .hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()
