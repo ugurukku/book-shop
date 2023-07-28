@@ -16,6 +16,7 @@ import com.ugurukku.kitabal.services.UserService;
 import com.ugurukku.kitabal.services.VerifierService;
 import com.ugurukku.kitabal.utils.RabbitMQPublisher;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,6 +26,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class AuthServiceImpl {
 
     private final AccessTokenManager accessTokenManager;
@@ -51,11 +53,7 @@ public class AuthServiceImpl {
                         .rememberMe(request.rememberMe())
                         .build());
 
-        return LoginResponse
-                .builder()
-                .accessToken(accessToken)
-                .refreshToken(refreshToken)
-                .build();
+        return new LoginResponse(accessToken,refreshToken);
     }
 
 
@@ -69,6 +67,7 @@ public class AuthServiceImpl {
 
         String verificationCode = UUID.randomUUID().toString();
         verifierService.add(registerRequest.email(), verificationCode);
+
         sendEmail(registerRequest.email(), verificationCode);
     }
 
@@ -77,29 +76,18 @@ public class AuthServiceImpl {
         User user = userService.getByEmail(email);
         user.setIsActive(true);
         userRepository.save(user);
+        log.info("User successfully verified with id : {}",email);
     }
 
     private void sendEmail(String email, String verificationCode) {
-
-        String senderName = "Kitabal.az";
         String subject = "Hesabı təsdiqləmə";
         String content = "Əziz istifadəçimiz, <br>"
                 + "Təsdiqləmə linkiniz:<br>"
-                + "<a href=\"http://localhost:8080/api/auth/verify?email=[[email]]&code=[[verificationCode]]\">Zəhmət olmasa klikləyin</a> <br>"
-                + "Təşəkkür edirik,<br>"
-                + senderName;
-
+                + "<a href=\"http://localhost:8080/api/auth/verify?email=[[email]]&code=[[verificationCode]]\">Zəhmət olmasa klikləyin</a> <br>";
         content = content.replace("[[email]]", email);
         content = content.replace("[[verificationCode]]", verificationCode);
-        System.out.println(content);
 
-        EmailDto verification = EmailDto.builder()
-                .recipient(email)
-                .subject(subject)
-                .message(content)
-                .isHtml(true)
-                .build();
-
+        EmailDto verification = new EmailDto(email,subject,content,true);
         rabbitMQPublisher.send(verification);
     }
 
@@ -108,5 +96,6 @@ public class AuthServiceImpl {
         user.setId(sequenceGenerator.generateSequence(User.SEQUENCE_NAME));
         user.setPassword(passwordEncoder.encode(registerRequest.password()));
         userRepository.save(user);
+        log.info("User successfully inserted with id : {}",user.getId());
     }
 }

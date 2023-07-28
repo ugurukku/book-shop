@@ -8,6 +8,12 @@ services:
       - "5672:5672"
     container_name: rabbitmq
 
+  app:
+    image: kitabal:mail-sender
+    ports:
+      - "8081:8081"
+    container_name: mail-sender
+
   db:
     image: kitabal:mongo
     ports:
