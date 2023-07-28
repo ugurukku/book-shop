@@ -1,10 +1,7 @@
 package com.ugurukku.kitabal.controllers;
 
-import com.ugurukku.kitabal.dto.AuthorRequest;
 import com.ugurukku.kitabal.dto.PublisherRequest;
-import com.ugurukku.kitabal.entities.Author;
 import com.ugurukku.kitabal.entities.Publisher;
-import com.ugurukku.kitabal.services.AuthorService;
 import com.ugurukku.kitabal.services.PublisherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
