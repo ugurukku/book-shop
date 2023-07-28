@@ -1,3 +1,5 @@
 Main goals:
 - using rabbitmq for mail sender
 - fetching images from Amazon S3
+- Stock Olanda xəbər et(Yunis Quliyev İmza)
+- Stockda yoxdur
