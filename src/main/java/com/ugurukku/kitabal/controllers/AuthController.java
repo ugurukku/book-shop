@@ -7,10 +7,7 @@ import com.ugurukku.kitabal.services.impl.AuthServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -29,6 +26,12 @@ public class AuthController {
         service.register(registerRequest);
         return new ResponseEntity<>("Doğrulama kodu email ünvanınıza göndərildi", HttpStatus.CREATED);
     }
+    @GetMapping("/verify")
+    public ResponseEntity<String> verify(@RequestParam("email")String email,@RequestParam("code")String code){
+        service.verify(email,code);
+        return new ResponseEntity<>("Hesabınız uğurla təsdiqləndi",HttpStatus.OK);
+    }
+
 
 
 }
