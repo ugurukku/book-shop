@@ -26,6 +26,9 @@ logging:
             core:
               MongoTemplate: DEBUG
 
+aws:
+  bucket-name: kitabal.az
+
 rabbitmq:
   queue: ugurukku.queue
   exchange: ugurukku.exchange

@@ -13,6 +13,11 @@ services:
     ports:
       - "8081:8081"
     container_name: mail-sender
+  image-service:
+    image: kitabal:image-service
+    ports:
+      - "8082:8082"
+    container_name: image-service
 
   db:
     image: kitabal:mongo
