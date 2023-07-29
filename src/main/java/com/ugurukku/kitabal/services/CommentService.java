@@ -9,6 +9,6 @@ public interface CommentService {
 
     List<CommentResponse> getAllByBookId(Long bookId);
 
-    void add(CommentRequest commentRequest);
+    void add(CommentRequest commentRequest,Long userId);
 
 }

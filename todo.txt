@@ -1,5 +1,6 @@
 Main goals:
 - using rabbitmq for mail sender ✅
-- fetching images from Amazon S3
+- fetching images from Amazon S3 ✅
+- add security for image service post image
 - Stock Olanda xəbər et(Yunis Quliyev İmza)
 - Stockda yoxdur

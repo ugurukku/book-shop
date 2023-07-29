@@ -14,6 +14,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class MyUserDetails implements UserDetails {
 
+    final Long id;
     final String email;
     final String password;
     final Boolean isActive;
@@ -24,6 +25,7 @@ public class MyUserDetails implements UserDetails {
         this.password = user.getPassword();
         this.isActive = user.getIsActive();
         this.role = user.getRole();
+        this.id = user.getId();
     }
 
     @Override
@@ -59,5 +61,9 @@ public class MyUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return isActive;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

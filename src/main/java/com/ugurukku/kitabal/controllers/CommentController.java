@@ -1,11 +1,13 @@
 package com.ugurukku.kitabal.controllers;
 
+import com.ugurukku.kitabal.dto.IdRequest;
 import com.ugurukku.kitabal.dto.comment.CommentRequest;
 import com.ugurukku.kitabal.dto.comment.CommentResponse;
 import com.ugurukku.kitabal.services.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,8 +25,9 @@ public class CommentController {
     }
 
     @PostMapping
-    public  ResponseEntity<String> add(@RequestBody CommentRequest commentRequest){
-        service.add(commentRequest);
+    public  ResponseEntity<String> add(@RequestBody CommentRequest commentRequest,
+                                       @AuthenticationPrincipal Long userId){
+        service.add(commentRequest,userId);
         return new ResponseEntity<>("Şərhiniz uğurla əlavə edildi.", HttpStatus.CREATED);
     }
 
