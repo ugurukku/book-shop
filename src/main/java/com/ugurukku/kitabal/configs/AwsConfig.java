@@ -14,8 +14,8 @@ public class AwsConfig {
 
     public AWSCredentials credentials() {
         return new BasicAWSCredentials(
-                "AKIA6ANW75BXD5SPOP2X",
-                "Qb6fj7CLfb+lQw8dqi8IA1HwsK4Kf4IcnXBGrrV5"
+                "*****************",
+                "******************"
         );
     }
 
