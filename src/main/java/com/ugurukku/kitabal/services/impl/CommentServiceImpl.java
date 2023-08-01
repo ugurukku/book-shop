@@ -4,6 +4,7 @@ import com.ugurukku.kitabal.dto.comment.CommentRequest;
 import com.ugurukku.kitabal.dto.comment.CommentResponse;
 import com.ugurukku.kitabal.dto.mapper.CommentMapper;
 import com.ugurukku.kitabal.entities.Comment;
+import com.ugurukku.kitabal.entities.User;
 import com.ugurukku.kitabal.repositories.CommentRepository;
 import com.ugurukku.kitabal.services.CommentService;
 import lombok.RequiredArgsConstructor;
@@ -25,9 +26,10 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public void add(CommentRequest commentRequest) {
+    public void add(CommentRequest commentRequest,Long userId) {
         Comment comment = mapper.toEntity(commentRequest);
         comment.setId(sequenceGenerator.generateSequence(Comment.SEQUENCE_NAME));
+        comment.setUser(User.builder().id(userId).build());
         repository.save(comment);
     }
 }
